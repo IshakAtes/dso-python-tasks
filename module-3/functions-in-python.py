@@ -34,3 +34,13 @@ match note:
         print("Mangelhaft!")
     case _:
         print("Ungenügend!!!")
+
+# --------------------------------------------------------------------------------
+
+# for-Schleifen
+passwörter = ["abc123", "gehe1m", "test", "123456"]
+
+for passwort in passwörter:
+    print(passwort)
+    if len(passwort) < 5:
+        break
