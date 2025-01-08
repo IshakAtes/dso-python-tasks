@@ -122,3 +122,20 @@ print(teilnehmerliste)
 # möchte. Eine weitere Anwendung von Endlosschleifen findet man bei der Client-/Server-
 # Programmierung. Der Server muss ständig laufen, um Anfragen von den Client-Programmen bei
 # Bedarf entgegennehmen zu können.
+
+
+
+
+
+# ----------------Walross-Operator-----------------------------------------
+# Walross-Operator
+# Mit dem Walross-Operator := können wir jetzt direkt die Nutzer eingabe in einer Variable (teilnehmer) abspeichern
+# und der Bedingung der While schleife eingeben. Diese Variable wird jetzt verglichen ob es (!=) nicht gleich X ist.
+# Wenn es nicht gleich X ist, wird die Schleife fortgesetzt. Andernfalls wird die Schleife beendet und die teilnehmerliste wird geprinted
+
+teilnehmerliste = []
+
+while (teilnehmer := input("Bitte gib einen Teilnehmer ein (X): ")) != "X":
+    teilnehmerliste.append(teilnehmer)
+
+print(teilnehmerliste)
