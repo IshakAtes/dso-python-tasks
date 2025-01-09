@@ -7,49 +7,63 @@ zahlen = [1, 2, 3, 4, 5]
 
 zahlen.append(6)
 print(zahlen)
+# Ausgabe: [1, 2, 3, 4, 5, 6]
 
 # Mehrere listen zusammenfügen, indem man die listen zusammen addiert
 neueZahlen = [10, 8, 9, 7]
 total = zahlen + neueZahlen
 print(total)
+# Ausgabe: [1, 2, 3, 4, 5, 6, 10, 8, 9, 7]
 
 # Liste Sortieren
 total.sort()
 print(total)
+# Ausgabe: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # Liste Absteigend Sortieren
 total.sort(reverse=True)
 print(total)
+# Ausgabe: [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 # Mit Count feststellen, wie oft etwas in der liste vorkommt
 print(total.count(1))
+# Ausgabe: 1
 
 # Elemente aus der Liste entfernen
 total.remove(10)
 print(total)
+# Ausgabe: [9, 8, 7, 6, 5, 4, 3, 2, 1]
 
 # Ein Element in eine bestimmte Stelle in der Liste hinzufügen
 total.insert(9, 0)
 print(total)
+# Ausgabe: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 # Die Liste Kopieren
 kopieListe = total.copy()
 print(kopieListe)
+# Ausgabe: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 # Die Liste  leeren
 total.clear()
 print(total)
+# Ausgabe: []
 print(kopieListe)
+# Ausgabe: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 # Nach einem Element in der Liste suchen und seinen Index-Wert erhalten
 position = kopieListe.index(3)
 print(position)
+# Ausgabe: 6
 
 # Prüfen ob ein Element in der liste enthalten ist oder nicht. Wir bekommen dann, ein True oder ein False.
 print(11 in kopieListe)
+# Ausgabe: False
 
 # Elemente in einer Liste mit einem zeichen oder auch ohne zusammenführen
 stringListe = ["I", "s", "h", "a", "k"]
 
 print(";".join(stringListe))
+# Ausgabe: I;s;h;a;k
 print("".join(stringListe))
+# Ausgabe: Ishak
