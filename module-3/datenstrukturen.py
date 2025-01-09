@@ -67,3 +67,31 @@ print(";".join(stringListe))
 # Ausgabe: I;s;h;a;k
 print("".join(stringListe))
 # Ausgabe: Ishak
+
+
+
+
+
+# ----------------Tupel-----------------------------------------
+# Ein Tupel ist eine unveränderliche Datenstruktur
+# Unterschied zwischen Liste und tupel:
+# Liste:
+# teilnehmer = ["Flo", "Pam", "Pia", "Lea"] => Das ist eine Liste. Sie ist veränderbar. Man kann elemente (append) hinzufügen oder elemente (remove) entfernen
+#
+#  Tupel => Das Beispiel unten ist ein Tupel. Die Variable haben werte, die nicht veränderbar sind.
+# p1 = (1,2)
+# p2 = (2,1)
+# print(type(p1))
+# Ausgabe: <class 'tuple'>
+# 
+# Anderes Beispiel: Das unten ist auch ein Tupel. Wir returnen eine Datenmenge (Tupel), diese rückgabewerte sind nicht änderbar.
+def rückgabe():
+    return True, "Antwort", 42
+ergebnis = rückgabe()
+
+print(type(ergebnis))
+# Ausgabe: <class 'tuple'>
+print(ergebnis)
+# (True, "Antwort", 42)
+
+() # Das ist auch schon ein Tupel
