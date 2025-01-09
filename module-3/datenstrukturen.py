@@ -95,3 +95,34 @@ print(ergebnis)
 # (True, "Antwort", 42)
 
 () # Das ist auch schon ein Tupel
+
+
+# Tupel Methoden
+
+# Tupel sind nicht veränderbar, aber mann kann sie kombinieren
+tupel= (1, 2, 3, 4)
+neuerTupel = tupel + (5, 6, 7, 8)
+print(neuerTupel)
+
+# Tupel können auch ausgelesen werden
+tupel= (1, 2, 3, 4, 5, 6, 7, 8, 1, 1, 1)
+n = tupel.count(1)
+print(n)
+
+i = tupel.index(3)
+print(i)
+
+# Man kann Tupel auch kopieren, aber da Tupel eh nicht veränderbar sind, ist es auch nicht nötig
+tupel= (1, 2, 3, 4, 5, 6, 7, 8, 1, 1, 1)
+fakeTupel = tupel
+print(tupel)
+print(fakeTupel)
+
+
+# Tupel in eine Liste umwandeln um sie verändern zu können
+zahlen = (1, 6, 2, 0, 5)
+zahlen = [1, 6, 2, 0, 5]
+
+liste = list(zahlen)
+liste.sort()
+print(liste)
