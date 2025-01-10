@@ -126,3 +126,15 @@ zahlen = [1, 6, 2, 0, 5]
 liste = list(zahlen)
 liste.sort()
 print(liste)
+
+
+
+
+
+# ----------------Sets-----------------------------------------
+# Set in python ist eine ungeordnete Sammlung von Elementen ohne Duplikate
+# Das set kann auch nicht mit methoden wie sort sortiert werden. In einem Set ist es nicht so ohne Weiteres möglich, bestimmte Elemente auszulesen. Das
+# liegt daran, dass hier keine Ordnung herrscht.
+# In der praxis wird es angewendet mit " seen = set() " um festzustellen ob man schon eine bestimmte zahl oder elemente in einer schleife schon gesehen hat 
+
+leeres_set = set()
