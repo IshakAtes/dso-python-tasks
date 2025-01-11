@@ -173,3 +173,74 @@ prim = {5, 2, 33, 5, 3, 5, 7, 11}
 primList = list(prim)
 primList.sort()
 print(primList)
+
+
+
+
+
+# ----------------Dictionaries-----------------------------------------
+telefonbuch = {
+    "Junus" : "12345",
+    "Florian": "1124352345",
+    "Ishak": "24345"
+}
+print(telefonbuch.get("Ishak"))
+print(telefonbuch)
+
+
+# Dictionaries- Methods
+passwort_hashes = {
+    "abc123" : " e99a18c428cb38d5f260853678922e03",
+    "1337" : " e48e13207341b6bffb7fb1622282247b",
+    "love" : " b5c0b187fe309af0f4d35982fd961d7e"
+}
+# auslesen der Werte mit den [] eckigen klammern oder mit get()
+print(passwort_hashes["abc123"])
+print(passwort_hashes.get("ultrageheim"))
+
+# Du kannst auch einen Default-Wert übergeben. Falls der Schlüssel nicht gefunden wird, wird der Default-Wert dem Schlüssen übergeben.
+print(passwort_hashes.get("ultrageheim", "fe309ae48e132082247bf0f4d35982fd"))
+
+# Ein Wert in der Dictionary updaten
+telefonbuch = {
+    "Junus" : "12345",
+    "Florian": "1124352345",
+    "Ishak": "24345"
+}
+# Ein Wert ändern
+telefonbuch["Junus"] = "345354"
+print(telefonbuch)
+
+# einen neuen Schlüssel mit Wert hinzufügen
+telefonbuch["Eva"] = "9876"
+print(telefonbuch)
+
+# oder einen neuen Schlüssel mit Wert also einen Dictionary mit der update() methode hinzufügen
+telefonbuch.update({"Mehmet" : 567567})
+print(telefonbuch)
+
+# Einen Schlüssel aus dem Dictionary entfernen
+del telefonbuch["Florian"]
+print(telefonbuch)
+
+# Dictionary Kopieren
+fakeTelefonbuch = telefonbuch.copy()
+print(fakeTelefonbuch)
+
+# Dictionary leeren
+telefonbuch.clear()
+print(telefonbuch)
+print(fakeTelefonbuch)
+
+# Telefonbuch in Liste umwandeln
+telefonbuch = {
+    "Junus" : "12345",
+    "Florian": "1124352345",
+    "Ishak": "24345"
+}
+
+# Keys vom dictionary auslesen
+print(list(telefonbuch.keys()))
+
+# Werte vom dictionary auslesen
+print(list(telefonbuch.values()))
