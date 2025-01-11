@@ -138,3 +138,38 @@ print(liste)
 # In der praxis wird es angewendet mit " seen = set() " um festzustellen ob man schon eine bestimmte zahl oder elemente in einer schleife schon gesehen hat 
 
 leeres_set = set()
+print({12, 28, 38, 12, True, 29, "Ishak", 12})
+
+
+# Set Methoden
+
+# Uns interessiert bei Sets nicht, wo sich ein bestimmtes Element befindet,
+# sondern ob ein bestimmtes Element überhaupt enthalten ist oder nicht.
+# Dazu kannst du das Keyword in verwenden. Davor schreibst du das
+# gesuchte Element und dahinter das Set, in dem du suchen möchtest.
+# in , mit in kannst du prüfen ob dein statement im Set enthalten ist oder nicht.
+meinSet = {12, 28, 38, 12, True, 29, "Ishak", 12}
+print(12 in meinSet)
+
+# add , etwas zum Set hinzufügen
+meinSet.add(-1)
+print(meinSet)
+
+# remove , etwas vom Set entfernen
+meinSet.remove(28)
+print(meinSet)
+
+# copy , das Set kopieren
+kopie = meinSet.copy()
+print(kopie)
+
+# clear , etwas das Set entleeren
+meinSet.clear()
+print(meinSet)
+print(kopie)
+
+# list() , Set umwandeln in liste
+prim = {5, 2, 33, 5, 3, 5, 7, 11}
+primList = list(prim)
+primList.sort()
+print(primList)
