@@ -46,8 +46,12 @@ def ausgabe(name, *summanden):
 ausgabe("ishak", 45, 45, 55, 99, 33)
 
 
+
+
+
+# ---------------- Kwargs -----------------------------------------
 # kwargs parametern kann man einen key/Schlüssen und einen value/Wert als parameter übergeben und wir bekommen einen dictionary/Object. Du kannst auch default-Werte angeben.
-# Wenn keine parameter dann übergeben werden, werden die Default werte übernommen. Also in unserem Fall
+# Wenn keine parameter übergeben werden, werden die Default werte übernommen. Also in unserem Fall
 # {'name': 'Max', 'lastname': 'Mustermann', 'age': 18, 'phone': 987654321}
 def kontakt(**kwargsObjekt):
     name = kwargsObjekt.get("name", "Max")
@@ -59,4 +63,16 @@ def kontakt(**kwargsObjekt):
 
 kontakt(name="ishak", lastname="Fire", age=34, phone=1234234)
 
+
+#Kwargs parameter kombinieren
+def daten_erfassen(id, name, lastname, *geo, **daten):
+    print(f"{id} {name} {lastname}")
+    print(f"Deine geo Positionen: {geo}")
+    print(daten)
+
+daten_erfassen(42, "Ishak", "Ates", 23, 354, 345, 2344, nickName="Izie", email="ishak@gmail.com", uid="23423432234asd", status="offline")
+# Ausgabe:
+# 42 Ishak Ates
+# Deine geo Positionen: (23, 354, 345, 2344)
+# {'nickName': 'Izie', 'email': 'ishak@gmail.com', 'uid': '23423432234asd', 'status': 'offline'}
 
