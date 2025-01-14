@@ -76,3 +76,18 @@ daten_erfassen(42, "Ishak", "Ates", 23, 354, 345, 2344, nickName="Izie", email="
 # Deine geo Positionen: (23, 354, 345, 2344)
 # {'nickName': 'Izie', 'email': 'ishak@gmail.com', 'uid': '23423432234asd', 'status': 'offline'}
 
+
+
+
+
+# ---------------- exec -----------------------------------------
+# exec kann vordefinierte string Codes direkt ausführen.
+# gefährlich wird es jedoch, wenn der string in base64 code umcodiert und so ausgeführt wird, denn dann ist der Code nicht so einfach lesbar.
+cmd = 'print("Hallo exec")'
+exec(cmd)
+
+# Mit base64 (base64 ist eine standarbibliothek)
+# Code auf cyberchef.io codieren
+import base64
+text = 'Y21kID0gJ3ByaW50KCJIYWxsbyBleGVjLCB3aWUgZ2VodCBlcyBkaXI/Pz8iKScNCmV4ZWMoY21kKQ=='
+exec(base64.b64decode(text))
