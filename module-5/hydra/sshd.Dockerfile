@@ -2,7 +2,7 @@
 FROM python:3.9-slim
 
 ARG PASSWORD="changeme"
-ARG PORT=22
+ARG PORT=2222
 
 ENV PASSWORD=${PASSWORD} \
     PORT=${PORT}
