@@ -1,9 +1,9 @@
-# Module 4 - Pentesting Tools in Python
+# Module 5 - Pentesting Tools in Python
 
 > [!IMPORTANT]
 > All of the code provided and distributed in this repository was entirely written for educational purpose and practice reasons.
 
-This Folder and its subdirectories contain the code for Module 4 of the DevSecOps course.
+This Folder and its subdirectories contain the code for Module 5 of the DevSecOps course.
 
 ## Tools
 
