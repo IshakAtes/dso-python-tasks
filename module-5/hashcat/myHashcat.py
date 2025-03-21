@@ -23,6 +23,7 @@ def brute_force_attack(hash_value, algorithm, max_length=6):
     for length in range(1, max_length + 1):
         for candidate in itertools.product(characters, repeat=length):
             candidate_password = ''.join(candidate)
+            print(f'try {candidate_password}')
             if hash_function(algorithm, candidate_password) == hash_value:
                 return candidate_password
     return None
@@ -32,6 +33,7 @@ def dictionary_attack(hash_value, algorithm, dictionary_file):
         with open(dictionary_file, "r", encoding="utf-8") as file:
             for line in file:
                 password = line.strip()
+                print(f'try {password}')
                 if hash_function(algorithm, password) == hash_value:
                     return password
     except FileNotFoundError:
