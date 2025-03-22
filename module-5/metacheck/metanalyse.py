@@ -20,7 +20,12 @@ def read_meta(path):
 
 def main():
     print('halo World')
-    path = "WassergebührenBescheid.pdf"
+    path = os.path.join(os.path.dirname(__file__), "Metadatenfaken.pdf")
+    pdf = PdfReader(path)
+
+    print("Metadaten:", pdf.metadata)  # Falls None, dann hat die Datei keine Metadaten
+    print("Seiten:", len(pdf.pages))   # Prüfen, ob PDF Seiten hat
+
     read_meta(path)
 
 
