@@ -19,7 +19,7 @@ def extract_metadata(pdf_path):
             "Keywords": metadata.get("/Keywords", "Nicht vorhanden"),
             "Description": metadata.get("/Description", "Nicht vorhanden"),
             "Producer": metadata.get("/Producer", "Nicht vorhanden"),
-            "PDF Version": reader.pdf_version
+            "PDF Version": metadata.get("/Version", "Unbekannt")
         }
     except Exception as e:
         print(f"Fehler beim Verarbeiten von {pdf_path}: {e}")
