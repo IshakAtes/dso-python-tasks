@@ -9,6 +9,9 @@ import argparse
 import subprocess
 import os
 
+# Using like this
+# python metaclear.py entfernen.pdf
+
 def remove_metadata(pdf_file):
     tmp_pdf = "tmp.pdf"
     cleaned_pdf = "document.clean.pdf"
