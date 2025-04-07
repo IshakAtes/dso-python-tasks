@@ -1,6 +1,9 @@
 from PyPDF2 import PdfReader, PdfWriter
 import os
 
+# Using like this
+# python metaChanger.py ~/Desktop/entfernen.pdf
+
 
 def write_meta(full_path, metadata):
     print('path', full_path)
@@ -19,7 +22,7 @@ def write_meta(full_path, metadata):
     # 🎭 NEUE METADATEN FAKEN (hier kannst du deine eigenen Daten setzen)
     fake_metadata = {
         "/Title": "Geheime PDF Datei",
-        "/Author": "James Bond",
+        "/Author": "James FakeBond",
         "/Subject": "Vertraulich",
         "/Creator": "Python Skript",
         "/Producer": "PyPDF2"
@@ -80,14 +83,14 @@ def read_meta(path):
 
 
 def main():
-    print('halo World')
-    path = os.path.join(os.path.dirname(__file__), "Metadatenfaken.pdf")
+    path = os.path.join(os.path.dirname(__file__), "entfernen.pdf")
     pdf = PdfReader(path)
 
     print("Metadaten:", pdf.metadata)  # Falls None, dann hat die Datei keine Metadaten
     print("Seiten:", len(pdf.pages))   # Prüfen, ob PDF Seiten hat
 
-    read_meta(path)
+    write_meta(path, pdf.metadata)
+    # read_meta(path)
 
 
 if __name__ == "__main__":
