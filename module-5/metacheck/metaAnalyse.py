@@ -4,6 +4,9 @@ import argparse
 from tqdm import tqdm
 from PyPDF2 import PdfReader
 
+# Using like this
+# python metaAnalyse.py -f entfernen.pdf -n fakePolicy.csv
+
 def extract_metadata(pdf_path):
     """Extrahiert Metadaten aus einer einzelnen PDF-Datei."""
     try:
